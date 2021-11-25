@@ -1,0 +1,58 @@
+#include "Player.h"
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <locale>
+
+using namespace std;
+
+Player::Player()
+{
+    surname = "bb";
+    forename = "";
+//    cout << surname;
+//    cout << forename;
+
+    //ctor
+}
+
+Player::Player(string s, string f){
+
+    string forename, surname, fname, temp2;
+    forename = f;
+    surname = s;
+
+    locale loc;
+
+    for (string::size_type i=0; i<forename.length(); ++i){
+        if (i == 0){
+            temp2 = toupper(forename[i],loc);
+            fname.append(temp2);
+        }
+        else if (i > 0) {
+            temp2 = tolower(forename[i],loc);
+            fname.append(temp2);
+        }
+    }
+    fname.append(" ");
+
+    for (string::size_type i=0; i<surname.length(); ++i){
+        if (i == 0){
+            temp2 = toupper(surname[i],loc);
+            fname.append(temp2);
+        }
+        else if (i > 0) {
+            temp2 = tolower(surname[i],loc);
+            fname.append(temp2);
+        }
+    }
+    cout << fname;
+    //ctor
+
+}
+
+
+Player::~Player()
+{
+    //dtor
+}
